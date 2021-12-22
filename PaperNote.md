@@ -6,7 +6,7 @@
 
 
 
-<Transfer Learning> <Domain Adaptation> <Model Adaptation>
+\<Transfer Learning\> \<Domain Adaptation\> \<Model Adaptation\>
 
 ---
 
@@ -14,7 +14,7 @@
 
 
 
-<Transfer Learning> <Domain Adaptation> <Model Adaptation>
+\<Transfer Learning\> \<Domain Adaptation\> \<Model Adaptation\>
 
 ---
 
@@ -22,7 +22,7 @@
 
 
 
-<Model Compression> <Knowledge Distillation> <Knowledge Distillation>
+\<Model Compression\> \<Knowledge Distillation\> \<Knowledge Distillation\>
 
 ---
 
@@ -30,7 +30,7 @@
 
 
 
-<Unclassified> <Unclassified> <Unclassified>
+\<Unclassified\> \<Unclassified\> \<Unclassified\>
 
 ---
 

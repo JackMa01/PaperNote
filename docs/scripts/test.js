@@ -1,5 +1,5 @@
 import Test from './test2.js';
 
-$(document).read(function() {
+$(document).ready(function() {
     Test()
 })

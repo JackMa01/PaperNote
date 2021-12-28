@@ -90,3 +90,74 @@ we propose **generating pure random noise images and using them as additional tr
 
 ---
 
+### Yuntao Chen, Naiyan Wang, Zhaoxiang Zhang. DarkRank: Accelerating Deep Metric Learning via Cross Sample Similarities Transfer. In AAAI. 2018.
+
+[[Abstract](https://ojs.aaai.org/index.php/AAAI/article/view/11783)] [[Paper](https://ojs.aaai.org/index.php/AAAI/article/view/11783/11642)]
+
+\<Model Compression\> \<Knowledge Distillation\> \<Knowledge Distillation\>
+
+\<Rank\> \<Dark Knowledge\> \<Embedded Space\> \<Learn to Rank\> \<DarkRank\> \<Similarity\> \<Distance\>
+
+**The relationships (similarities or distances) across different samples encodes the structure of the embedded space of teacher networks. A powerful teacher model may reflect these similarities as the embedded space.**
+
+![pic](https://mj-note.oss-cn-shanghai.aliyuncs.com/Windows/pic_20200428100628/paper_20211228112254.jpg)
+
+$$
+P(\pi|\mathbf X)=\prod_{i=1}^n\frac{\exp[S(\mathbf x_{\pi(i)})]}{\sum_{k=1}^n\exp[S(\mathbf x_{\pi(k)})]}
+$$
+
+$$
+S(\mathbf x)=-\alpha||\mathbf q - \mathbf x||^{\beta}_2
+$$
+
+$$
+L_{soft}(\mathbf X^s, \mathbf X^t)=D_{KL}[P(\pi \in \mathcal P | \mathbf X^t) || P(\pi \in \mathcal P | \mathbf X^s)]\\
+=\sum_{\pi \in \mathcal P}P(\pi | \mathbf X^t)\log\frac{P(\pi | \mathbf X^t)}{P(\pi | \mathbf X^s)}
+$$
+
+$$
+L_{hard}(\mathbf X^s, \mathbf X^t)=-\log P(\pi_y|\mathbf X^s,\mathbf X^t)
+$$
+
+---
+
+### Sergey Zagoruyko, Nikos Komodakis. Paying more attention to attention: improving the performance of convolutional neural networks via attention transfer. In ICLR. 2017.
+
+[[Abstract](https://hal.archives-ouvertes.fr/hal-01832769/)] [[Paper](https://arxiv.org/pdf/1612.03928.pdf)]
+
+\<Attention\> \<Spatial Map\> \<Attention Transfer\> \<Activation-based\> \<Gradient-based\> \<Horizontal Flip Invariance\> \<Symmetry Constraints\>
+
+**Here we consider attention as a set of spatial maps that essentially try to encode on which spatial areas of the input the network focuses most for taking its output decision (e.g., for classifying an image).**
+
+![pic](https://mj-note.oss-cn-shanghai.aliyuncs.com/Windows/pic_20200428100628/paper_20211228113112.jpg)
+
+![pic](https://mj-note.oss-cn-shanghai.aliyuncs.com/Windows/pic_20200428100628/paper_20211228113120.jpg)
+
+$$
+\mathcal F:R^{C\times H\times W}\rightarrow R^{H\times W}
+$$
+
+![pic](https://mj-note.oss-cn-shanghai.aliyuncs.com/Windows/pic_20200428100628/paper_20211228113128.jpg)
+
+**Activation-based Attention Transfer**
+$$
+\mathcal L_{AT}=\mathcal L(\mathbf W_S,x)+\frac{\beta}{2}\sum_{j\in\mathcal I}||\frac{Q^j_S}{||Q^j_S||_2}-\frac{Q^j_T}{||Q^j_T||_2}||_p
+$$
+
+**Gradient-based Attention Transfer**
+
+$$
+J_S=\frac{\partial}{\partial x}\mathcal L(\mathbf W_S, x), J_T=\frac{\partial}{\partial x}\mathcal L(\mathbf W_T, x)
+$$
+
+$$
+\mathcal L_{AT}(\mathbf W_S, \mathbf W_T, x)=\mathcal L(\mathbf W_S, x)+\frac{\beta}{2}||J_S-J_T||_2
+$$
+
+**Horizontal Flip Invariance (or Symmetry Constraints) on Gradient Attention Maps**
+$$
+\mathcal L_{sym}(\mathbf W,x)=\mathcal L(\mathbf W,x)+\frac{\beta}{2}||\frac{\partial}{\partial x}\mathcal L(\mathbf W,x)-flip(\frac{\partial}{\partial x}\mathcal L(\mathbf W,flip(x)))||_2
+$$
+
+---
+
